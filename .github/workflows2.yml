@@ -23,3 +23,36 @@ jobs:
 
       - name: Display Success Message
         run: echo "Customer Processing Executed Successfully"
+deploy_dev:
+     needs: validate
+     runs-on: ubuntu-latest
+     environment: DEV
+
+ 
+
+     steps:
+       - name: Deploy to DEV
+         run : echo "Deploying to development"
+   deploy_qa:
+     needs: validate
+     runs-on: ubuntu-latest
+     environment: QA
+
+ 
+
+     steps:
+       - name: Deploy to QA
+         run : echo "Deploying to QA"
+
+ 
+
+  deploy_prod:
+     needs: validate
+     runs-on: ubuntu-latest
+     environment: PROD
+
+ 
+
+     steps:
+       - name: Deploy to PROD
+         run : echo "Deploying to Production"
